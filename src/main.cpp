@@ -12,9 +12,17 @@
 
 #include "GLFW/glfw3.h"
 
-static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods){
+static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
         glfwSetWindowShouldClose(window, GL_TRUE); // close window
+}
+
+static void drag_callback(GLFWwindow* window, int button, int action, int mods)
+{
+    if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS) {
+        glfwDragWindow(window);
+    }
 }
 
 int main(void)
@@ -41,6 +49,9 @@ int main(void)
     
     /* Notify when a esc key is pressed */
     glfwSetKeyCallback(window, key_callback);
+    
+    /* Notify when a mouse button is pressed to drag a window */
+    glfwSetMouseButtonCallback(window, drag_callback);
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))

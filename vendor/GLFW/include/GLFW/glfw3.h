@@ -3973,6 +3973,11 @@ GLFWAPI void glfwHideWindow(GLFWwindow* window);
  *  @ingroup window
  */
 GLFWAPI void glfwFocusWindow(GLFWwindow* window);
+/*! @brief Starts window drag for specified window.
+ *
+ *  Added by Nicolas Urbanek
+ */
+GLFWAPI void glfwDragWindow(GLFWwindow* window);
 
 /*! @brief Requests user attention to the specified window.
  *

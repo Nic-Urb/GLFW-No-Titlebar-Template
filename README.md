@@ -1,5 +1,6 @@
 # GLFW No Titlebar Template (works only on MacOS platforms)
 Custom GLFW window that hides the titlebar using custom `glfwWindowHint(GLFW_TITLEBAR, GL_FALSE)`, allowing to create a custom titlebar.
+(Supports window dragging)
 ## Premake
 Generate project file for XCode: 
 
